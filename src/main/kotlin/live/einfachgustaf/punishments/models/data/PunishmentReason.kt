@@ -9,5 +9,6 @@ data class PunishmentReason(
     val name: String,
     val time: Long,
     val parents: PunishmentReason?,
-    val type: PunishmentType
+    val type: PunishmentType,
+    val requiredPermission: String? = ""
 )

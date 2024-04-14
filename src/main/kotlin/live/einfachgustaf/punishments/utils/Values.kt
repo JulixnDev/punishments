@@ -1,6 +1,8 @@
 package live.einfachgustaf.punishments.utils
 
 import kotlinx.serialization.json.Json
+import live.einfachgustaf.punishments.cache.PlayerCache
+import live.einfachgustaf.punishments.cache.ReasonCache
 import live.einfachgustaf.punishments.config.ConfigManager.config
 import live.einfachgustaf.punishments.db.DatabaseConnector
 import net.axay.kspigot.chat.literalText
@@ -17,3 +19,6 @@ val prefix: Component = literalText {
 }
 
 val databaseConnector = DatabaseConnector(config.mongoDbConnectionString)
+
+val playerCache = PlayerCache()
+val reasonCache = ReasonCache()

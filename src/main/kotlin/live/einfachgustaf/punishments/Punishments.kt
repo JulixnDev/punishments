@@ -5,6 +5,7 @@ import com.velocitypowered.api.event.proxy.ProxyInitializeEvent
 import com.velocitypowered.api.plugin.Plugin
 import com.velocitypowered.api.proxy.ProxyServer
 import jakarta.inject.Inject
+import live.einfachgustaf.punishments.utils.reasonCache
 
 @Plugin(
     id = "punishments",
@@ -15,7 +16,15 @@ import jakarta.inject.Inject
 )
 class Punishments @Inject constructor(private val server: ProxyServer) {
 
+    companion object {
+        lateinit var proxyServer: ProxyServer
+    }
+
     @Subscribe
     fun onProxyIntitialization(event: ProxyInitializeEvent) {
+        proxyServer = server
+
+        // Load all reasons into cache
+        reasonCache.loadAllIntoCache()
     }
 }

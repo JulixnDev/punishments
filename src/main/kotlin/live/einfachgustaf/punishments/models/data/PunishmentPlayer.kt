@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class PunishmentPlayer(
     val uuid: String,
+    val name: String,
     val activePunishments: ArrayList<Punishment>,
     val punishmentHistory: ArrayList<Punishment>
 )
